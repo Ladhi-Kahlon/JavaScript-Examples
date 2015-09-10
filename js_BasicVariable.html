@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Learning Javascript</title>
+		
+		<meta charset="utf-8" />
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
+        <style type="text/css">
+
+        </style>
+		
+	</head>
+	
+	<body>
+        
+        <input type="text" id="inputValue" value="text"/> <!--default input value-->
+        
+        <button id="myButton">Click To Change Text Below</button>
+        
+        <div id="divText">Default Text</div> <!--default output value-->
+        
+        <script type="text/javascript">
+            
+            var newText=document.getElementById("inputValue").value; //value is capture from input box and assing to new text variable
+            
+            document.getElementById("myButton").onclick=function() {
+				                
+                newText=document.getElementById("inputValue").value; //update value 
+                
+                document.getElementById("divText").innerHTML=newText; //updated output value
+            }
+        
+        </script>
+        
+
+	</body>
+</html>

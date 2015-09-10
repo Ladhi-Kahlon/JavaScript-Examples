@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Learning Javascript</title>
+		
+		<meta charset="utf-8" />
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
+        <style type="text/css">
+        </style>
+		
+	</head>
+	
+	<body>
+        
+        <p>Guess input number?</p>
+        <input type="text" id="myNumber" />
+        <button id="guess">Click</button>
+ 
+        <script type="text/javascript">
+            
+            document.getElementById("guess").onclick=function() {
+               
+                var check=false;
+                var guesses=1;
+                var x;
+                
+                while(check==false) {
+                                      
+                    x=Math.random();
+
+                    x=6*x;
+
+                    x=Math.floor(x);
+
+                    if(document.getElementById("myNumber").value==x) {
+
+                        check=true;
+                        
+                    } else {
+                        
+                        guesses++;
+                    }
+                  
+              }
+                
+             alert("Got it! it was a: "+x+". It only took me: "+guesses+" guesses!");   
+                
+            }        
+
+        </script>
+
+	</body>
+</html>

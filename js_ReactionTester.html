@@ -1,0 +1,100 @@
+<!docutype html>
+<html>
+    <head>
+        <title>Javascript reaction tester</title>
+        
+        <meta charset="utf-8" />
+        <meta http-equiv="content-type" content="text/html" charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
+        <style type="text/css">
+			body {
+				font-family: Verdana, Geneva, sans-serif;
+			}
+			#redBox {
+				height: 200px;
+				width: 200px;
+				background-color: red;
+				display: none;
+				position: relative;
+			}
+			.bold {
+				font-weight: bold;
+			}
+		</style>
+        
+    </head>
+    <body>
+        <h1 id="h1Color">Reaction Tester!</h1>
+        <p>Click on the boxes and circles as quickly as you can</p>
+        <hr />
+        <p class="bold">Your reaction time: <span id="rTime"></span></p>
+        
+        <div id="redBox"></div>
+        
+        <script type="text/javascript">
+			
+			function getRandomColor() {
+				var letters = '0123456789ABCDEF'.split('');
+				var color = '#';
+				
+				for (var i = 0; i < 6; i++ ) {
+					color += letters[Math.round(Math.random() * 15)];
+				}
+				return color;
+			}
+
+			var clickedTime; var createdTime; var reactionTime;
+
+			//function to create box after random time, and set bkground color
+			function makeBox() {
+				var time=Math.random();
+				time=time*3000; //1000 mili = 1 sec
+
+				setTimeout(function() {
+
+					if (Math.random()>0.5) { //randomy change box to circle or squre
+						document.getElementById("redBox").style.borderRadius="100px";
+					} else {
+						document.getElementById("redBox").style.borderRadius="0";
+					}
+
+					var top=Math.random();
+					top=top*400;
+					var left=Math.random();
+					left=left*644;
+
+					document.getElementById("redBox").style.top=top+"px";
+					document.getElementById("redBox").style.left=left+"px";
+
+					document.getElementById("redBox").style.backgroundColor=getRandomColor();
+					document.getElementById("redBox").style.display="block";
+					//document.getElementById("h1Color").style.color=getRandomColor();
+
+					createdTime=Date.now(); //time snap-shot when box was created
+
+				}, time);
+			}
+
+			makeBox(); //create box on load
+
+			//on lick, hide box and redisplay after few seconds
+			document.getElementById("redBox").onclick=function() {
+
+				//document.getElementById("redBox").style.display="none"; 
+				//shortcut to write the above code (this, ref to same element as parent
+				this.style.display="none"; //hide box
+
+				clickedTime=Date.now(); //time snap-shot when box was clicked
+
+				reactionTime=(clickedTime-createdTime)/1000; //convert mili to seconds /1000
+
+				document.getElementById("rTime").innerHTML=reactionTime;
+
+				makeBox(); //display box again
+			}
+		
+		</script>
+    
+    </body>
+</html>

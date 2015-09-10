@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Learning Javascript</title>
+		
+		<meta charset="utf-8" />
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
+        <style type="text/css">
+
+        </style>
+		
+	</head>
+	
+	<body>
+        
+        <button id="btnTextChanger">Default Text</button>
+        
+        <div id="myDiv">This is some text from myDIV</div>
+        
+        <script type="text/javascript">
+            
+            var myArray = new Array(); //create array
+            
+            myArray[0]="pizza"; //array assignmnet
+            myArray[1]="burger";
+            
+            myArray.push("snow"); //adding array
+            
+            //console.log(myArray); //log array to browser
+
+            myOtherArray=["rain","sunshine"]; //different way to create array
+            
+            myOtherArray.push("white");
+            
+            //splice comand in array to add element
+            //myOtherArray.splice(0,1); //start with 0 item and remove one item
+            //myOtherArray.splice(1,2); //start with 1 item and remove two item
+            
+            //splice comand in array to remove elemen
+            myOtherArray.splice(3,0,"hail","cloudy"); //start with 1st element and add new item before last (white);
+            
+            //length comand
+            
+            console.log(myOtherArray.length); //log/display to browser
+            
+            document.getElementById("btnTextChanger").onclick=function() {
+                document.getElementById("myDiv").innerHTML=myArray[1];
+            }
+        
+        </script>
+        
+
+	</body>
+</html>
