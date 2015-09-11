@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+    <head>
+        <title>jQuery Basic Alert</title>
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
+        <script type="text/javascript" src="jquery.min.js"></script>
+		
+		<style type="text/css">
+			
+			#circle {
+				width: 100px;
+				height: 100px;
+				background-color: green;
+				border-radius: 100%;
+				position: relative;
+				top: 100px;
+				left: 500px;
+			}
+			
+			.center {
+				text-align: center;
+				color: aliceblue;
+				position: relative;
+				top: 40px;
+				left: 20px;
+			}
+		
+		
+		</style>
+    
+    </head>
+    
+    <body>
+
+		<div id="circle"><span class="center">Click Me</span></div>
+		
+		
+		<script>
+			$("#circle").click(function() {
+				
+				alert("Hello");		
+				
+			});
+			
+		</script>
+		
+    
+    </body>
+
+</html>
