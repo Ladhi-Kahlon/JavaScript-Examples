@@ -1,0 +1,139 @@
+[1mdiff --git a/github-git-cheat-sheet.pdf b/github-git-cheat-sheet.pdf[m
+[1mdeleted file mode 100644[m
+[1mindex 64ddc41..0000000[m
+[1m--- a/github-git-cheat-sheet.pdf[m
+[1m+++ /dev/null[m
+[36m@@ -1,119 +0,0 @@[m
+[31m-GIT CHEAT SHEET                                                                                                                        V 1.1.1[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-Git is the open source distributed version control system that facilitates GitHub activities on your laptop or[m
+[31m-desktop. This cheat sheet summarizes commonly used Git command line instructions for quick reference.[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-INSTALL GIT                                                          MAKE CHANGES[m
+[31m-GitHub provides desktop clients that include a graphical user        Review edits and craft a commit transaction[m
+[31m-interface for the most common repository actions and an automati-[m
+[31m-cally updating command line edition of Git for advanced scenarios.    $ git status[m
+[31m-[m
+[31m-GitHub for Windows                                                    Lists all new or modiﬁed ﬁles to be committed[m
+[31m-https://windows.github.com[m
+[31m-                                                                      $ git diff[m
+[31m-GitHub for Mac                                                        Shows ﬁle diﬀerences not yet staged[m
+[31m-https://mac.github.com[m
+[31m-                                                                      $ git add [file][m
+[31m-[m
+[31m-Git distributions for Linux and POSIX systems are available on the    Snapshots the ﬁle in preparation for versioning[m
+[31m-oﬃcial Git SCM web site.                                              $ git diff --staged[m
+[31m-[m
+[31m-Git for All Platforms                                                 Shows ﬁle diﬀerences between staging and the last ﬁle version[m
+[31m-http://git-scm.com[m
+[31m-                                                                      $ git reset [file][m
+[31m-[m
+[31m-                                                                      Unstages the ﬁle, but preserve its contents[m
+[31m-[m
+[31m-CONFIGURE TOOLING                                                     $ git commit -m "[descriptive message]"[m
+[31m-Conﬁgure user information for all local repositories[m
+[31m-                                                                      Records ﬁle snapshots permanently in version history[m
+[31m-[m
+[31m- $ git config --global user.name "[name]"[m
+[31m-[m
+[31m- Sets the name you want attached to your commit transactions[m
+[31m- $ git config --global user.email "[email address]"[m
+[31m-                                                                     GROUP CHANGES[m
+[31m-                                                                     Name a series of commits and combine completed eﬀorts[m
+[31m- Sets the email you want attached to your commit transactions[m
+[31m-                                                                      $ git branch[m
+[31m- $ git config --global color.ui auto[m
+[31m-                                                                      Lists all local branches in the current repository[m
+[31m- Enables helpful colorization of command line output[m
+[31m-                                                                      $ git branch [branch-name][m
+[31m-[m
+[31m-                                                                      Creates a new branch[m
+[31m-[m
+[31m-CREATE REPOSITORIES                                                   $ git checkout [branch-name][m
+[31m-Start a new repository or obtain one from an existing URL[m
+[31m-                                                                      Switches to the speciﬁed branch and updates the working directory[m
+[31m- $ git init [project-name]                                            $ git merge [branch][m
+[31m-[m
+[31m- Creates a new local repository with the speciﬁed name                Combines the speciﬁed branch’s history into the current branch[m
+[31m- $ git clone [url]                                                    $ git branch -d [branch-name][m
+[31m-[m
+[31m- Downloads a project and its entire version history                   Deletes the speciﬁed branch[m
+[31m-          GIT CHEAT SHEET[m
+[31m-[m
+[31m-[m
+[31m-REFACTOR FILENAMES                                                    REVIEW HISTORY[m
+[31m-Relocate and remove versioned ﬁles                                    Browse and inspect the evolution of project ﬁles[m
+[31m-[m
+[31m- $ git rm [file]                                                       $ git log[m
+[31m-[m
+[31m- Deletes the ﬁle from the working directory and stages the deletion    Lists version history for the current branch[m
+[31m-[m
+[31m- $ git rm --cached [file]                                              $ git log --follow [file][m
+[31m-[m
+[31m- Removes the ﬁle from version control but preserves the ﬁle locally    Lists version history for a ﬁle, including renames[m
+[31m-[m
+[31m- $ git mv [file-original] [file-renamed]                               $ git diff [first-branch]...[second-branch][m
+[31m-[m
+[31m- Changes the ﬁle name and prepares it for commit                       Shows content diﬀerences between two branches[m
+[31m-                                                                       $ git show [commit][m
+[31m-[m
+[31m-                                                                       Outputs metadata and content changes of the speciﬁed commit[m
+[31m-SUPPRESS TRACKING[m
+[31m-Exclude temporary ﬁles and paths[m
+[31m-[m
+[31m- *.log[m
+[31m-                                                                      REDO COMMITS[m
+[31m- build/                                                               Erase mistakes and craft replacement history[m
+[31m- temp-*[m
+[31m-                                                                       $ git reset [commit][m
+[31m- A text ﬁle named .gitignore suppresses accidental versioning of[m
+[31m- ﬁles and paths matching the speciﬁed patterns                         Undoes all commits after [commit], preserving changes locally[m
+[31m-[m
+[31m- $ git ls-files --other --ignored --exclude-standard                   $ git reset --hard [commit][m
+[31m-[m
+[31m- Lists all ignored ﬁles in this project                                Discards all history and changes back to the speciﬁed commit[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-SAVE FRAGMENTS                                                        SYNCHRONIZE CHANGES[m
+[31m-Shelve and restore incomplete changes                                 Register a repository bookmark and exchange version history[m
+[31m-[m
+[31m- $ git stash                                                           $ git fetch [bookmark][m
+[31m-[m
+[31m- Temporarily stores all modiﬁed tracked ﬁles                           Downloads all history from the repository bookmark[m
+[31m- $ git stash pop                                                       $ git merge [bookmark]/[branch][m
+[31m-[m
+[31m- Restores the most recently stashed ﬁles                               Combines bookmark’s branch into current local branch[m
+[31m- $ git stash list                                                      $ git push [alias] [branch][m
+[31m-[m
+[31m- Lists all stashed changesets                                          Uploads all local branch commits to GitHub[m
+[31m- $ git stash drop                                                      $ git pull[m
+[31m-[m
+[31m- Discards the most recently stashed changeset                          Downloads bookmark history and incorporates changes[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m- Learn more about using GitHub and Git. Email the Training Team or visit                                      training@github.com[m
+[31m- our web site for learning event schedules and private class availability.                                    training.github.com[m
+[31m-[m
+\ No newline at end of file[m
+[1mdiff --git a/js_ReactionTester.html b/js_ReactionTester.html[m
+[1mindex bd0c3a9..69aa16f 100644[m
+[1m--- a/js_ReactionTester.html[m
+[1m+++ b/js_ReactionTester.html[m
+[36m@@ -33,7 +33,7 @@[m
+         <div id="redBox"></div>[m
+         [m
+         <script type="text/javascript">[m
+[31m-			[m
+[32m+[m			[32m//Working file, testing for gitHub upload.[m
+ 			function getRandomColor() {[m
+ 				var letters = '0123456789ABCDEF'.split('');[m
+ 				var color = '#';[m
