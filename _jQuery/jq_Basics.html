@@ -11,23 +11,69 @@
         <!--for jQuery link to latest version online
         <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
         -->
+        <style type="text/css">
+            .sqare {
+                background-color: red;
+                width: 100px;
+                height: 100px;
+                margin-bottom: 10px;
+                margin-left: 120px;
+                
+            }
+            #circle {
+                background-color: green;
+                width: 100px;
+                height: 100px;
+                border-radius: 100%;
+                margin-left: 120px;
+            }
+        
+        </style>
         
     </head>
     <body>
         
+        <div class="sqare"></div>
+        <div id="circle"></div>
+        <p>This is some text</p>
+        <iframe src="http://cnn.com"></iframe>
+        
         <script>
             //to check if jquery is installed
+            /*
             if(typeof jQuery != "undefined") {
                 alert("jQuery is running");
             } else {
                 alert('jQuery is NOT running');
             }
+            */
+            
+            //run jQuery on-Click function()
+            
+            $("#circle").click(function() { //other functions click; hover; 
+                $("p").html("the text has been changed"); //html to change/display inner html, attr (to return any attribute
+                //$("iframe").attr("src","http://www.comcast.com");
+            });
+            //can run jQuery using element id (i.e div, p, ul, ol, )
+            /*
+            $("p").click(function() {
+                alert("div click");
+            });
+            */
             
         
         </script>
 
-        
-    
     </body>
-
 </html>
+<!--
+alert function in jQuery works the same as java-script
+$("") inside the "" enter class/id or any ohter element such as div, p, ul, ect
+$(""). to enter behavior click, havor
+$("").click/hover(function() {
+    $("p").html("new text"); will change the html content for <p> tag
+    $("p").htm(); will display the html content for <p> tag
+    $("iframe").attr("src"); will display the attribue of source from iframe element
+    $("iframe").attr("src","http://www.2wqanew-site.com"); will change src for iframe element
+
+-->
