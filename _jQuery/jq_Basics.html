@@ -12,7 +12,7 @@
         <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
         -->
         <style type="text/css">
-            .sqare {
+            .square {
                 background-color: red;
                 width: 100px;
                 height: 100px;
@@ -33,13 +33,13 @@
     </head>
     <body>
         
-        <div class="sqare"></div>
+        <div class="square"></div>
         <div id="circle"></div>
         <p>This is some text</p>
-        <iframe src="http://cnn.com"></iframe>
+        <!--<iframe src="http://cnn.com"></iframe>-->
         
         <script>
-            //to check if jquery is installed
+            //***************to check if jquery is installed
             /*
             if(typeof jQuery != "undefined") {
                 alert("jQuery is running");
@@ -48,18 +48,34 @@
             }
             */
             
-            //run jQuery on-Click function()
+            //***************run jQuery on Click/hover function()
             
             $("#circle").click(function() { //other functions click; hover; 
                 $("p").html("the text has been changed"); //html to change/display inner html, attr (to return any attribute
                 //$("iframe").attr("src","http://www.comcast.com");
             });
-            //can run jQuery using element id (i.e div, p, ul, ol, )
+            //***************can run jQuery using element id (i.e div, p, ul, ol, )
             /*
             $("p").click(function() {
                 alert("div click");
             });
             */
+            
+            //***************Changing style using jQuery
+            /*
+            $("div").click(function() {
+                //alert("width is: "+$(".sqare").css("width")); //will alert the width property of element
+                //$("div").css("width","400px"); //will change the width preporty to 400 px's
+                //or $(this).css("width","400px");
+                //$("div").css("display","none"); //to hide element, ("dev")hide all element at once.
+                //$(this).hide(); //another way to hide element, (this) will hide one div at a time.
+                $(this).fadeOut(); //fade out function.
+            });
+            */
+            //***************challeng click on a circle and sqare fade out
+            $("#circle").click(function() {
+                $(".square").fadeOut();
+            });
             
         
         </script>
