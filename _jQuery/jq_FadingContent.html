@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+    <head>
+        <title>jQuery Basics</title>
+        
+        <meta charset="utf-8" />
+        <meta http-equiv="content-type" content="text/html, charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
+        <script type="text/javascript" src="jquery.min.js"></script>
+        <!--for jQuery link to latest version online
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+        -->
+        <style type="text/css">
+            .square {
+                background-color: red;
+                width: 100px;
+                height: 100px;
+                margin-bottom: 10px;
+                margin-left: 120px;
+                
+            }
+            #circle {
+                background-color: green;
+                width: 100px;
+                height: 100px;
+                border-radius: 100%;
+                margin-left: 120px;
+            }
+        
+        </style>
+        
+    </head>
+    <body>
+        
+        <P id="text">Some text to test jQuery fading function</P>
+		<button id="btnSubmit">Submit</button>
+		<button id="btnFadeIn">Fader-In</button>
+        
+        
+        <script>
+			$("#btnSubmit").click(function() {
+				$("p").fadeOut();
+				//attribute for fadeout speed
+				//fadeout(2000) 2 mili second, also can use word "fast", "slow"
+				//to call back fundtion
+				$("p").fadeOut("slow", function() {
+					alert("fade out is complete");
+				});
+			});
+			
+			$("#btnFadeIn").click(function() {
+				
+				$("p").fadeIn();
+			});
+        
+        </script>
+
+    </body>
+</html>
+<!--
+alert function in jQuery works the same as java-script
+$("") inside the "" enter class/id or any ohter element such as div, p, ul, ect
+$(""). to enter behavior click, havor
+$("").click/hover(function() {
+    $("p").html("new text"); will change the html content for <p> tag
+    $("p").htm(); will display the html content for <p> tag
+    $("iframe").attr("src"); will display the attribue of source from iframe element
+    $("iframe").attr("src","http://www.2wqanew-site.com"); will change src for iframe element
+Chaing style
+    $("div").css("width", 400px); //will change the width of all div elements to 400 px.
+
+-->
