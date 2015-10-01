@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Testing AJAX call to refresh contents</title>
+		
+	    <meta charset="utf-8" />
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
+        <script type="text/javascript" src="jquery.min.js"></script>
+	</head>
+	
+	<body>
+		
+		<h2>ajax: Asyncronous Java-script And XML </h2>
+		
+		
+		<script type="text/javascript">
+			
+			/*Basic ajax (ajax = Asyncronous Javascript and XML) get call
+			in this example we are calling ajax_text.html page to load without refreshing the page*/
+			/*$.get("ajax_test.html", function(data) {
+				alert(data);
+			});*/
+			
+			/*use ajax call vs get call, more options*/
+
+			$.ajax({
+				url:"ajax_test.html"
+			}).done(function(data) { //call back function to return the data (data=variable to stroe content)
+				
+				//alert(data); 
+				// will alert content from data variable, which hold data from url: ajax_test.html
+				
+				//$("h2").html(data); 
+				// will change the content of h2 element on the page with variable content
+				
+				$("h2").append(' - '+data); // will append the data to h2 element
+			});
+			
+			
+			
+		
+		
+		</script>
+		
+		
+	
+	
+	</body>
+
+</html>
