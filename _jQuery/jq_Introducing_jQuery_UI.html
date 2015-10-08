@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8" />
+	
+		<!--Downloaded version jQuery-->
+		<script type="text/javascript" src="jquery.min.js"></script>
+		<!--Google UI for jQuery-->
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+		
+		<!--Google UI for CSS serach google cms-->
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/
+1.11.3/themes/smoothness/jquery-ui.css" />
+		
+		<style>
+			#square {
+				width: 200px;
+				height: 200px;
+				background-color: green;
+				border-radius: 100px;
+			}
+			#resizable {
+				width: 200px;
+				height: 200px;
+				background-color: orange;
+				border-radius: 100px;
+			}
+		
+		</style>
+		
+	
+	</head>
+	
+	<body>
+		
+		<div id="square"></div>
+		<div id="resizable"></div>
+		
+		<script type="text/javascript">
+			
+			$("#square").draggable();
+			
+			$("#resizable").resizable();
+
+		
+		</script>
+		
+	
+	</body>
+
+	
+</html>
